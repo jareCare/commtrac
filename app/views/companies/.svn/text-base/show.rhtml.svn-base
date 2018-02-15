@@ -1,0 +1,91 @@
+<h2><%= h @company.name %></h2>
+	
+<% content_for :sidebar do %>
+  <%= render :partial => 'totals', :locals => {
+                                     :action => company_path(@company),
+                                     :company => @company
+                                   } %>
+<% end %>
+
+<dl>
+  <dt>Current Balance</dt>
+  <dd><%= number_to_currency @company.credit_balance %></dd>
+  <dt>Address</dt>
+  <dd>
+  <% if @company.street.blank? -%>
+    &mdash;
+  <% else -%>
+    <%= h @company.street %>
+  <% end -%>
+  <% if @company.city.blank? -%>
+    &mdash;
+  <% else -%>
+    <%= h @company.city %>
+  <% end -%>
+  <% if @company.state.blank? -%>
+    &mdash;
+  <% else -%>
+    <%= h @company.state %>
+  <% end -%>
+  <% if @company.zipcode.blank? -%>
+    &mdash;
+  <% else -%>
+    <%= h @company.zipcode %>
+  <% end -%>
+  </dd>
+  <dt>Phone Number</dt>
+  <dd>
+  <% if @company.phone_number.blank? -%>
+    &mdash;
+  <% else -%>
+    <%= h @company.phone_number %>
+  <% end -%>
+  </dd>
+  <dt>Web Site</dt>
+  <dd>
+  <% if @company.web_site.blank? -%>
+    &mdash;
+  <% else -%>
+    <%= link_to h(@company.web_site), h(@company.web_site), :target => '_blank' %>
+  <% end -%>
+  </dd>
+</dl>
+
+<h3>Users</h3>
+<% if @company.users.empty? -%>
+  <p>&mdash;</p>
+<% else -%>
+  <ul>
+    <% @company.users.each do |each| -%>
+      <li><%= link_to h(each.name), user_path(each.company, each) %></li>
+    <% end -%>
+  </ul>
+<% end -%>
+
+<h3>Accounts</h3>
+<% if @company.accounts.empty? -%>
+  <p>&mdash;</p>
+<% else -%>
+  <h4>Broker Accounts</h4>
+  <% if @company.brokers.empty? -%>
+    <p>&mdash;</p>
+  <% else -%>
+    <ul>
+      <% @company.accounts.select {|each| each.organization.broker?}.each do |each| -%>
+        <li><%= link_to h(each.organization.name), account_path(each.company, each) %></li>
+      <% end -%>
+    </ul>
+  <% end -%>
+
+  <h4>Vendor Accounts</h4>
+  <% if @company.vendors.empty? -%>
+    <p>&mdash;</p>
+  <% else -%>
+    <ul>
+      <% @company.accounts.select {|each| each.organization.vendor?}.each do |each| -%>
+        <li><%= link_to h(each.organization.name), account_path(each.company, each) %></li>
+      <% end -%>
+    </ul>
+  <% end -%>
+<% end -%>
+

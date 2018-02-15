@@ -1,0 +1,10 @@
+<h2>Payments</h2>
+
+<%= render :partial => 'payments/payments', :locals => { 
+                                              :payments => @payments
+                                            } %>
+
+<h3>Processed</h3>
+<p><%= link_to 'payment history', invoices_path %></p>
+<br />
+<p><%= link_to 'request payment', new_payment_path(@company) %></p>

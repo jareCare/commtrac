@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/configs
+END
+lighttpd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/configs/lighttpd.conf
+END
+routes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/configs/routes.rb
+END
+apache.conf
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/configs/apache.conf
+END
+empty.log
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/configs/empty.log
+END

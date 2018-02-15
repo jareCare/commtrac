@@ -1,0 +1,42 @@
+<h2><%= h @user.name %></h2>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'companies/totals', :locals => {
+                                               :action => admin_user_path(@user),
+                                               :company => @user.company
+                                             } %>
+<% end %>
+
+<dl>
+  <dt>Company</dt>
+  <dd><%= link_to h(@user.company.name), admin_company_path(@user.company) %></dd>
+  <dt>Email</dt>
+  <dd><%= h @user.email %></dd>
+  <dt>Password</dt>
+  <dd><%= link_to 'edit', admin_new_password_path(:user_id => @user) %></dd>
+  <dt>Phone Number</dt>
+  <dd>
+    <% if @user.phone_number.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @user.phone_number %>
+    <% end -%>
+  </dd>
+  <dt>Admin</dt>
+  <dd>
+    <% if @user.admin? %>
+      Yes
+    <% else -%>
+      No
+    <% end -%>
+  </dd>
+</dl>
+
+<div class="options">
+  <%= link_to 'edit', admin_edit_user_path(@user) %>
+  <% unless you?(@user) -%>
+    <%= link_to 'delete', admin_user_path(@user),
+                          :method => :delete,
+                          :confirm => 'Are you sure you want to delete this user?' %>
+  <% end -%>
+</div>

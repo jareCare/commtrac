@@ -1,0 +1,11 @@
+<h2>Password Reminder</h2>
+
+<% form_tag reminders_path do %>
+  <p>
+    <label for="email">Email</label>
+    <%= text_field_tag :email %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', new_session_path %>
+  </p>
+<% end %>

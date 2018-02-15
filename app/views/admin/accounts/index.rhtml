@@ -1,0 +1,13 @@
+<h2>Associations</h2>
+
+<% group_by_company(@accounts).each do |company, company_accounts| -%>
+  <h3><%= link_to h(company.name), admin_company_path(company) %></h3>
+  <ul>
+    <% sort_by_organization_name(company_accounts).each do |each| -%>
+      <li><%= link_to h(each.organization.name), admin_account_path(each) %></li>
+    <% end -%>
+  </ul>
+  <div class="options">
+    <%= link_to 'add association', admin_new_account_path(:company_id => company) %>
+  </div>
+<% end -%>

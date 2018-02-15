@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/attachment_fu
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/attachment_fu/Rakefile
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/attachment_fu/init.rb
+END
+CHANGELOG
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/attachment_fu/CHANGELOG
+END
+amazon_s3.yml.tpl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/attachment_fu/amazon_s3.yml.tpl
+END
+install.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/attachment_fu/install.rb
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/attachment_fu/README
+END

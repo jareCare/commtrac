@@ -1,0 +1,11 @@
+<h2><%= @account.organization.organization_type %> Account <%= h @account.number %></h2>
+
+<p>
+  <%= link_to h(@company.name), company_path(@company) %> 
+  /
+  <%= link_to h(@account.organization.name), organization_path(@account.organization) %>
+</p>
+
+<%= render :partial => 'payments/payments', :locals => { 
+                                              :payments => @account.payments 
+                                            } %>

@@ -1,0 +1,85 @@
+<h2><%= h @organization.name %></h2>
+
+<dl>
+  <dt>Address</dt>
+  <dd>
+    <% if @organization.street.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.street %>
+    <% end -%>
+    <% if @organization.city.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.city %>
+    <% end -%>
+    <% if @organization.state.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.state %>
+    <% end -%>
+    <% if @organization.zipcode.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.zipcode %>
+    <% end -%>
+  </dd>
+  <dt>Contact</dt>
+  <dd>
+    <% if @organization.contact.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.contact %>
+    <% end -%>
+  </dd>
+  <dt>Contact Email</dt>
+  <dd>
+    <% if @organization.email.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.email %>
+    <% end -%>
+  </dd>
+  <dt>Phone Number</dt>
+  <dd>
+    <% if @organization.phone_number.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.phone_number %>
+    <% end -%>
+  </dd>
+  <dt>Terms</dt>
+  <dd>
+    <% if @organization.terms.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.terms %>
+    <% end -%>
+  </dd>
+  <dt>Notes</dt>
+  <dd>
+    <% if @organization.notes.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @organization.notes %>
+    <% end -%>
+  </dd>
+</dl>
+
+<div class="options">
+  <%= link_to 'edit', admin_edit_organization_path(@organization) %>
+  <%= link_to 'delete', admin_organization_path(@organization),
+                        :method => :delete,
+                        :confirm => "Are you sure you want to delete '#{@organization.name}'?" %>
+</div>
+
+<h3>Associations</h3>
+<% if @organization.accounts.empty? -%>
+  <p>&mdash;</p>
+<% else -%>
+  <ul>
+    <% @organization.accounts.each do |each| -%>
+      <li><%= link_to h(each.company.name), admin_account_path(each) %></li>
+    <% end -%>
+  </ul>
+<% end -%>

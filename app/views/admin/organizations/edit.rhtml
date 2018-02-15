@@ -1,0 +1,54 @@
+<h2>Edit <%= @organization.organization_type %></h2>
+
+<%= error_messages_for :organization -%>
+<% form_for :organization, 
+            :url => admin_organization_path(@organization),
+            :html => { :method => :put } do |form| %>
+  <p>
+    <label for="organization_name">Name</label>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <label for="organization_organization_type">Type</label>
+    <%= form.select :organization_type, %w(Broker Vendor) %>
+  </p>
+  <p>
+    <label for="organization_street">Street (optional)</label>
+    <%= form.text_field :street %>
+  </p>
+  <p>
+    <label for="organization_city">City (optional)</label>
+    <%= form.text_field :city %>
+  </p>
+  <p>
+    <label for="organization_state">State (optional)</label>
+    <%= form.text_field :state %>
+  </p>
+  <p>
+    <label for="organization_zipcode">Zipcode (optional)</label>
+    <%= form.text_field :zipcode %>
+  </p>
+  <p>
+    <label for="organization_contact">Contact (optional)</label>
+    <%= form.text_field :contact %>
+  </p>
+  <p>
+    <label for="organization_email">Contact Email (optional)</label>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <label for="organization_phone_number">Phone Number (optional)</label>
+    <%= form.text_field :phone_number %>
+  </p>
+  <p>
+    <label for="organization_terms">Terms (optional)</label>
+    <%= form.text_area :terms, :rows => 5 %>
+  </p>
+  <p>
+    <label for="organization_notes">Notes (optional)</label>
+    <%= form.text_area :notes, :rows => 5 %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', admin_organization_path(@organization) %>
+  </p>
+<% end %>

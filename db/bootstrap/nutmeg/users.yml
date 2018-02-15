@@ -1,0 +1,8 @@
+marcos:
+  id: 1
+  first_name: Marcos
+  last_name: Frisaura
+  email: mfrisaura@gmail.com
+  password: <%= 'marcos'.to_sha1 %>
+  admin: 1
+  company_id: 1

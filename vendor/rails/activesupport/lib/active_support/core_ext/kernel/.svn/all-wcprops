@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/kernel
+END
+requires.rb
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/kernel/requires.rb
+END
+daemonizing.rb
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/kernel/daemonizing.rb
+END
+reporting.rb
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/kernel/reporting.rb
+END
+agnostics.rb
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/kernel/agnostics.rb
+END

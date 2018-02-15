@@ -1,0 +1,14 @@
+<h2>New Image</h2>
+
+<%= error_messages_for :picture -%>
+<% form_for :picture, 
+            :url => user_picture_path(@company, @user), 
+	    :html => { :multipart => true } do |form| %>
+  <p>
+    <label for="picture_uploaded_data">Image</label>
+    <%= form.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', user_path(@company, @user) %>
+  </p>
+<% end %>

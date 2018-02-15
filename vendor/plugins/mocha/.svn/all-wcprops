@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/mocha
+END
+RELEASE
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/mocha/RELEASE
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/mocha/Rakefile
+END
+TODO
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/mocha/TODO
+END
+init.rb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/mocha/init.rb
+END
+COPYING
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/mocha/COPYING
+END
+MIT-LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/mocha/MIT-LICENSE
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/mocha/README
+END

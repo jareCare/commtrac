@@ -1,0 +1,13 @@
+<h2>Edit Trade</h2>
+
+<% form_for :trade, 
+            :url => admin_trade_path(@trade),
+            :html => { :method => :put } do |form| %>
+  <p>
+    <label for="trade_execution_type">Execution Type</label>
+    <%= form.select :execution_type, available_execution_types - [%w(All All)] %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', admin_trade_path(@trade) %>
+  </p>
+<% end %>

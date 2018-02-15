@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions
+END
+1_people_have_last_names.rb
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions/1_people_have_last_names.rb
+END
+3_we_need_reminders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions/3_we_need_reminders.rb
+END
+4_innocent_jointable.rb
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions/4_innocent_jointable.rb
+END
+1000_people_have_middle_names.rb
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/migrations_with_missing_versions/1000_people_have_middle_names.rb
+END

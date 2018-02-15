@@ -1,0 +1,35 @@
+<h2>Trade</h2>
+
+<dl>
+  <dt>Company</dt>
+  <dd><%= link_to h(@trade.company.name), admin_company_path(@trade.company) %></dd>
+  <dt>Direction</dt>
+  <dd><%= h @trade.direction %></dd>
+  <dt>Quantity</dt>
+  <dd><%= number_with_delimiter @trade.quantity %></dd>
+  <dt>Symbol</dt>
+  <dd><%= h @trade.symbol %></dd>
+  <dt>Average Price</dt>
+  <dd><%= number_to_currency @trade.average_price %></dd>
+  <dt>Trade Date</dt>
+  <dd><%= @trade.made_on.to_s :basic %></dd>
+  <dt>Execution Type</dt>
+  <dd><%= format_execution_type @trade.execution_type %></dd>
+  <dt>Credit Earned</dt>
+  <dd>
+    <% if @trade.credit_accrued.zero? -%>
+      &mdash;
+    <% else -%>    
+      <%= number_to_currency @trade.credit_accrued %>
+    <% end -%>
+  </dd>
+  <dt>Commission Paid</dt>
+  <dd><%= number_to_currency @trade.commission_paid %></dd>
+</dl>
+
+<div class="options">
+  <%= link_to 'edit', admin_edit_trade_path(@trade) %>
+  <%= link_to 'delete', admin_trade_path(@trade),
+                        :method => :delete,
+                        :confirm => 'Are you sure you want to delete this trade?' %>
+</div>

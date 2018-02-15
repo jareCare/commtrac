@@ -1,0 +1,58 @@
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>Williams Commissions Tracker</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <%= stylesheet_link_tag 'styles', 'calendar', :media => 'screen' %>
+    <%= javascript_include_tag 'prototype', 
+                               'application',
+                               'calendar',
+                               'calendar-en',
+                               'calendar-setup' %>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <h1 id="header">Williams Commissions Tracker</h1> <!-- end #header -->
+
+      <% if logged_in? -%>
+        <ul id="navigation">
+          <% if current_user.admin? -%>
+            <li class="first"><%= link_to 'Home', admin_companies_path %></li>
+            <li><%= link_to 'Companies', admin_companies_path %></li>
+	    <li><%= link_to 'Users', admin_users_path %></li>
+  	    <li><%= link_to 'Brokers / Vendors', admin_organizations_path %></li>
+  	    <li><%= link_to 'Associations', admin_accounts_path %></li>
+	    <li><%= link_to 'Payments', admin_payments_path %></li>
+	    <li><%= link_to 'Invoice History', admin_invoices_path %></li> 
+	    <li><%= link_to 'Trades', admin_trades_path %></li> 
+            <li><%= link_to 'Logout', session_path, :method => :delete %></li>
+	  <% else -%>
+            <li class="first"><%= link_to 'Home', user_path(current_user.company, current_user) %></li>
+	    <li><%= link_to 'Trades History', trades_path(current_user.company) %></li>
+	    <li><%= link_to 'Payment History', invoices_path(current_user.company) %></li>
+	    <li><%= link_to 'Payments', payments_path(current_user.company) %></li>
+            <li><%= link_to 'Logout', session_path, :method => :delete %></li>
+	  <% end -%>
+        </ul> <!-- end #navigation -->
+      <% end -%>
+
+      <div id="content">
+        <% if flash[:notice] -%>
+          <p id="flash"><%= flash[:notice] %></p>
+	<% end -%>
+        <div id="sidebar">
+          <%= yield :sidebar %>
+        </div> <!-- end #sidebar -->
+        <div id="main">
+    	  <%= yield %>
+        </div> <!-- end #main -->
+      </div> <!-- end #content -->
+    </div> <!-- end #wrapper -->
+
+    <%= render :partial => 'layouts/google_analytics' %>
+  </body>
+</html>
+    

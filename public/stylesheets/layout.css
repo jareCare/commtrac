@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  position: relative;
+  left: 50%;
+  width: 90%;
+  margin-left: -45%;
+}
+
+#header {
+  margin: 2em 0 1em 0;
+}
+
+#navigation {
+  float: left; 
+  list-style: none;
+}
+
+#navigation li {
+  float: left; 
+  padding: 0 0.5em;
+}
+
+#navigation li.first {
+  padding-left: 0;
+}
+
+#content {
+  clear: left;
+  margin: 1.2em 0;
+}
+
+p#flash {
+  margin: 1.5em 0;
+}
+
+div.options {
+  margin: 1em 0;
+}
+
+h2 {
+  margin: 0.5em 0;
+}
+
+h3 {
+  margin: 1em 0;
+}
+
+#content ul {
+  margin: 0.5em 0 0.5em 2em;
+}
+
+dl {
+  margin: 1em 0;
+}
+
+dl dd {
+  margin: 0.2em 0 0.2em 1em;
+}
+
+form label {
+  display: block;
+}
+
+form label.inline {
+  display: inline;
+}
+
+form p {
+  margin: 0.4em 0;
+}
+
+table {
+  border: 1px solid #000;
+  margin: 0.5em 0;
+}
+
+th, td {
+  padding: 0.1em 0.8em;
+}
+
+tr.totals-row td {
+  border-top: 1px solid #000;
+}
+
+tr.spacer {
+  border: 1px solid #000;
+}
+
+div#main {
+  margin-right: 2em;
+}
+
+div#sidebar {
+  float: right;
+}

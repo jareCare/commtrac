@@ -1,0 +1,95 @@
+company_one_ibm:
+  id: 1
+  direction: Buy
+  quantity: 100
+  symbol: IBM
+  average_price: 10.50
+  made_on: <%= Date.today.to_s :db %>
+  execution_type: BEST
+  company_id: 1
+  credit_accrued: 0.0
+  commission_paid: 1.00
+
+company_one_msft:
+  id: 2
+  direction: Sell
+  quantity: 50
+  symbol: MSFT
+  average_price: 25.00
+  made_on: <%= 2.weeks.ago.to_date.to_s :db %>
+  execution_type: BEST
+  company_id: 1
+  credit_accrued: 0.0
+  commission_paid: 1.00
+
+company_one_yhoo:
+  id: 3
+  direction: Buy
+  quantity: 75
+  symbol: YHOO
+  average_price: 50.25
+  made_on: <%= Date.today.to_s :db %>
+  execution_type: SOFT
+  company_id: 1
+  credit_accrued: 1.00
+  commission_paid: 1.00
+
+company_one_goog:
+  id: 4
+  direction: Buy
+  quantity: 25
+  symbol: GOOG
+  average_price: 400.35
+  made_on: <%= Date.today.to_s :db %>
+  execution_type: SOFT
+  company_id: 1
+  credit_accrued: 1.00
+  commission_paid: 1.00
+
+company_two_orcl:
+  id: 5
+  direction: Buy
+  quantity: 35
+  symbol: ORCL
+  average_price: 15.75
+  made_on: <%= Date.today.to_s :db %>
+  execution_type: SOFT
+  company_id: 2
+  credit_accrued: 1.00
+  commission_paid: 1.00
+
+company_two_ibm:
+  id: 6
+  direction: Sell
+  quantity: 60
+  symbol: IBM
+  average_price: 75.50
+  made_on: <%= 3.days.ago.to_date.to_s :db %>
+  execution_type: BEST
+  company_id: 2
+  credit_accrued: 0.0
+  commission_paid: 1.00
+
+company_two_msft:
+  id: 7
+  direction: Buy
+  quantity: 35
+  symbol: MSFT
+  average_price: 45.55
+  made_on: <%= 1.month.ago.to_date.to_s :db %>
+  execution_type: BEST
+  company_id: 2
+  credit_accrued: 0.0
+  commission_paid: 1.00
+
+company_two_amzn:
+  id: 8
+  direction: Sell
+  quantity: 80
+  symbol: AMZN
+  average_price: 75.60
+  made_on: <%= 2.weeks.ago.to_date.to_s :db %>
+  execution_type: BEST
+  company_id: 2
+  credit_accrued: 0.0
+  commission_paid: 1.00

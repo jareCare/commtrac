@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures
+END
+accounts.yml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures/accounts.yml
+END
+invoices.yml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures/invoices.yml
+END
+payments.yml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures/payments.yml
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures/users.yml
+END
+trades.yml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures/trades.yml
+END
+organizations.yml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures/organizations.yml
+END
+companies.yml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures/companies.yml
+END
+pictures.yml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/test/fixtures/pictures.yml
+END

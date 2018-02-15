@@ -1,0 +1,178 @@
+<% form_tag action, :method => :get do %>
+  <label>Select a date</label>
+  <%= select_month @end_date.nil? ? Time.now : @end_date, :prefix => 'end_date' %>
+  <%= select_day @end_date.nil? ? Time.now : @end_date, :prefix => 'end_date' %>
+  <%= select_year @end_date.nil? ? Time.now : @end_date, :prefix => 'end_date', :start_year => 2007, :end_year => Time.now.year %>
+  <%= image_tag 'calendar.gif', :id => 'end_date_trigger' %>
+  <script type="text/javascript">
+     setupCalendar('end_date[month]', 
+                   'end_date[day]',
+                   'end_date[year]',
+    	           'end_date_trigger');
+  </script>
+  <%= submit_tag 'Submit' %>
+<% end %>
+
+<table cellspacing="0">
+  <thead>
+    <tr>
+      <th></th>
+      <th>MTD</th>
+      <th>YTD</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gross Commission Generated</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.commission_paid_mtd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.commission_paid_mtd_up_to(@end_date) %>
+        <% end %>
+      </td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.commission_paid_ytd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.commission_paid_ytd_up_to(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>CSA Gross Commission Generated</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.soft_commission_paid_mtd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.soft_commission_paid_mtd_up_to(@end_date) %>
+        <% end %>
+      </td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.soft_commission_paid_ytd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.soft_commission_paid_ytd_up_to(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Non-CSA Gross Commission Generated</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.best_commission_paid_mtd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.best_commission_paid_mtd_up_to(@end_date) %>
+        <% end %>
+      </td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.best_commission_paid_ytd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.best_commission_paid_ytd_up_to(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr class="spacer">
+      <td colspan="3">
+        <hr />
+      </td>
+    </tr>
+    <tr>
+      <td>Prior Year CSA Credit</td>
+      <td class="number">&mdash;</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.prior_year_credits_accrued(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.prior_year_credits_accrued(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Net CSA Credits</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.credits_accrued_mtd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.credits_accrued_mtd_up_to(@end_date) %>
+        <% end %>
+      </td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.credits_accrued_ytd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.credits_accrued_ytd_up_to(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Total CSA Credits</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.total_credits_accrued_mtd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.total_credits_accrued_mtd_up_to(@end_date) %>
+        <% end %>
+      </td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.total_credits_accrued_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.total_credits_accrued_up_to(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>CSA Payments Processed</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.processed_payments_mtd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.processed_payments_mtd_up_to(@end_date) %>
+        <% end %>
+      </td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.processed_payments_ytd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.processed_payments_ytd_up_to(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>CSA Payments Pending/Accepted</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.pending_and_accepted_payments_mtd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.pending_and_accepted_payments_mtd_up_to(@end_date) %>
+        <% end %>
+      </td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.pending_and_accepted_payments_ytd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.pending_and_accepted_payments_ytd_up_to(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>CSA Net Credit (Debit) Balance</td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.credit_balance_mtd_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.credit_balance_mtd_up_to(@end_date) %>
+        <% end %>
+      </td>
+      <td class="number">
+        <% if @end_date.nil? %>
+          <%= number_to_currency company.credit_balance_up_to(Time.now) %>
+        <% else %>
+          <%= number_to_currency company.credit_balance_up_to(@end_date) %>
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>

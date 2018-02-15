@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/bad_fixtures
+END
+duplicate_attributes
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/bad_fixtures/duplicate_attributes
+END
+attr_with_spaces
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/bad_fixtures/attr_with_spaces
+END
+missing_value
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/bad_fixtures/missing_value
+END
+attr_with_numeric_first_char
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/bad_fixtures/attr_with_numeric_first_char
+END
+blank_line
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activerecord/test/fixtures/bad_fixtures/blank_line
+END

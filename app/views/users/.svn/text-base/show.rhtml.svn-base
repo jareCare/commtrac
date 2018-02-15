@@ -1,0 +1,42 @@
+<h2><%= h @user.name %></h2>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'companies/totals', :locals => {
+                                               :action => user_path(@company, @user),
+                                               :company => @company
+                                             } %>
+<% end %>
+
+<dl>
+  <dt>Company</dt>
+  <dd><%= link_to h(@company.name), company_path(@company) %></dd>
+  <dt>Current Balance</dt>
+  <dd><%= number_to_currency @user.company.credit_balance %></dd>
+  <dt>Email</dt>
+  <dd><%= h @user.email %></dd>
+  <dt>Phone Number</dt>
+  <dd>
+    <% if @user.phone_number.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @user.phone_number %>
+    <% end -%>
+  </dd>
+  <dt>Payment Form</dt>
+  <dd>
+    <% if @user.picture.nil? %>
+      <% if you?(@user) -%>
+        <%= link_to 'Add an image', user_new_picture_path(@company, @user) %>
+      <% else -%>
+        &mdash;
+      <% end -%>
+    <% else -%>
+      <%= link_to 'View', user_picture_path(@company, @user) %>
+      <% if you?(@user) -%>
+        <%= link_to 'Delete', user_picture_path(@company, @user),
+                              :method => :delete,
+                              :confirm => 'Are you sure you want to delete your picture?' %>
+      <% end -%>
+    <% end -%>
+  </dd>
+</dl>

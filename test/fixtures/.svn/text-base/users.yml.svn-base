@@ -1,0 +1,33 @@
+user_one:
+  id: 1
+  first_name: User
+  last_name: One
+  email: user@one.com
+  password: <%= 'user one'.to_sha1 %>
+  phone_number: (111) 222-2222
+  admin: 1
+  company_id: 1
+  token: <%= 'user@one.com'.to_sha1 %>
+  created_on: <%= Time.now.to_s :db %>
+
+user_two:
+  id: 2
+  first_name: User
+  last_name: Two
+  email: user@two.com
+  password: <%= 'user two'.to_sha1 %>
+  phone_number: (222) 333-3333
+  company_id: 1
+  token: <%= 'user@two.com'.to_sha1 %>
+  created_on: <%= Time.now.to_s :db %>
+
+user_three:
+  id: 3
+  first_name: User
+  last_name: Three
+  email: user@three.com
+  password: <%= 'user three'.to_sha1 %>
+  phone_number: (333) 444-4444
+  company_id: 2
+  token: <%= 'user@three.com'.to_sha1 %>
+  created_on: <%= Time.now.to_s :db %>

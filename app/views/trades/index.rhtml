@@ -1,0 +1,103 @@
+<h2>Search Trade History</h2>
+
+<% form_tag trades_path, :method => :get do %>
+  <p>
+    <label for="execution_type">Execution Type</label>
+    <%= select_tag 'execution_type', options_for_select(available_execution_types, params[:execution_type]) %>
+  </p>
+  <p>
+    <label for="start_date">Made Between</label>
+    <%= select_month @start_date || Time.now.beginning_of_month, :prefix => 'start_date' %>
+    <%= select_day @start_date || Time.now.beginning_of_month, :prefix => 'start_date' %>
+    <%= select_year @start_date || Time.now.beginning_of_month, :prefix => 'start_date', :start_year => 2007, :end_year => Time.now.year %>
+    <%= image_tag 'calendar.gif', :id => 'start_date_trigger' %>
+    <script type="text/javascript">
+       setupCalendar('start_date[month]', 
+                     'start_date[day]',
+		     'start_date[year]',
+		     'start_date_trigger');
+    </script>
+  </p>
+  <p>
+    <%= select_month @end_date || Time.now.end_of_month, :prefix => 'end_date' %>
+    <%= select_day @end_date || Time.now.end_of_month, :prefix => 'end_date' %>
+    <%= select_year @end_date || Time.now.end_of_month, :prefix => 'end_date', :start_year => 2007, :end_year => Time.now.year %>
+    <%= image_tag 'calendar.gif', :id => 'end_date_trigger' %>
+    <script type="text/javascript">
+       setupCalendar('end_date[month]', 
+                     'end_date[day]',
+		     'end_date[year]',
+		     'end_date_trigger');
+    </script>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+<% end %>
+
+<% unless params[:execution_type].blank? -%>
+  <p>Execution type: 
+    <% if Trade::EXECUTION_TYPES.include?(params[:execution_type]) %>
+      <%= format_execution_type params[:execution_type] %>
+    <% else %>
+      <%= h params[:execution_type] %>
+    <% end %>
+  </p>
+<% end -%>
+
+<% unless @start_date.nil? ||
+          @end_date.nil? -%>
+  <p>Trades made between: <%= @start_date.to_s :basic %> - <%= @end_date.to_s :basic %></p>
+<% end -%>
+
+<% unless @trades.nil? -%>
+  <% if @trades.empty? -%>
+    <p>There were no trades found.</p>
+  <% else -%>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>Trade Date</th>
+          <th>Execution Type</th>
+          <th>Direction</th>
+          <th>Symbol</th>
+          <th>Average Price</th>
+          <th>Quantity</th>
+          <th>Credit Earned</th>
+	  <th>Gross Commission Paid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @trades.each do |each| -%>
+          <tr>
+	    <td><%= each.made_on.to_s :basic %></dt>
+            <td><%= format_execution_type each.execution_type %></td>
+            <td><%= h each.direction %></td>
+    	    <td><%= h each.symbol %></td>
+	    <td class="number"><%= number_to_currency each.average_price, :precision => 4 %></dt>
+    	    <td class="number"><%= number_with_delimiter each.quantity %></td>
+	    <td class="number">
+	      <% if each.credit_accrued.zero? %>
+	        &mdash;
+	      <% else -%>
+	       <%= number_to_currency each.credit_accrued %> 
+              <% end -%>
+	    </td>
+	    <td class="number"><%= number_to_currency each.commission_paid %></td>
+ 	  </tr>
+        <% end -%>
+	  <tr class="totals-row">
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td class="number"><%= number_with_delimiter @totals['quantity'] %></td>
+	    <td class="number"><%= number_to_currency @totals['credit_accrued'] %></td>
+	    <td class="number"><%= number_to_currency @totals['commission_paid'] %></td>
+	  </tr>
+      </tbody>
+    </table>
+    <%= will_paginate @trades %>
+  <% end -%>
+<% end -%>

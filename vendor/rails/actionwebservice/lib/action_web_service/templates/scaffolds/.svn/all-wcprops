@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds
+END
+layout.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/layout.rhtml
+END
+result.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/result.rhtml
+END
+methods.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/methods.rhtml
+END
+parameters.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/actionwebservice/lib/action_web_service/templates/scaffolds/parameters.rhtml
+END

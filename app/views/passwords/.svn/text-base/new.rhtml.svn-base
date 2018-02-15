@@ -1,0 +1,18 @@
+<h2>New Password</h2>
+
+<%= error_messages_for :user -%>
+<% form_for :user, :url => passwords_path do |form| %>
+  <%= hidden_field_tag :_u, params[:_u] %>
+  <%= hidden_field_tag :_p, params[:_p] %>
+  <p>
+    <label for="user_password">Password</label>
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <label for="user_password_confirmation">Password Again</label>
+    <%= form.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+<% end %>

@@ -1,0 +1,7 @@
+Dear <%= @payment.user.name %>,
+
+Your payment of <%= number_to_currency @payment.amount %> to the <%= @payment.account.company.name %> / <%= @payment.account.organization.name %> account made on <%= @payment.created_on.to_s :basic %> has been accepted.
+
+Reason:
+
+<%= @payment.response %>

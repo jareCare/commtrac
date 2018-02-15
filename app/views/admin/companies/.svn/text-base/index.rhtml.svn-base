@@ -1,0 +1,11 @@
+<h2>Companies</h2>
+
+<ul>
+  <% @companies.each do |each| -%>
+    <li><%= link_to h(each.name), admin_company_path(each) %></li>
+  <% end -%>
+</ul>
+
+<div class="options">
+  <%= link_to 'add a new company', admin_new_company_path %>
+</div>

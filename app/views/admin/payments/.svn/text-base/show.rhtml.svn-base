@@ -1,0 +1,47 @@
+<h2>Payment</h2>
+
+<dl>
+  <dt>User</dt>
+  <dd><%= link_to h(@payment.user.name), admin_user_path(@payment.user) %></dd>
+  <dt>Amount</dt>
+  <dd><%= number_to_currency @payment.amount %></dd>
+  <dt>Association</dt>
+  <dd><%= link_to h("#{@payment.account.company.name} / #{@payment.account.organization.name}"), admin_account_path(@payment.account) %></dd>
+  <dt>Their Notes</dt>
+  <dd>
+    <% if @payment.request.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @payment.request %></dd>
+    <% end -%>
+  <dt>Made On</dt>
+  <dd><%= @payment.created_on.to_s :basic %></dd>
+  <dt>Status</dt>
+  <dd>
+    <%= @payment.status %>
+    <% if @payment.pending? %>
+      <%= link_to 'accept / reject', admin_edit_payment_path(@payment) %>
+    <% end %>
+  </dd>
+  <dt>Amount Due</dt>
+  <dd>
+    <% if @payment.processed? -%>
+      <%= number_to_currency 0 %>
+    <% else -%>
+      <%= number_to_currency @payment.amount_due %>
+    <% end -%>
+  </dd>
+</dl>
+
+<h3>Invoices</h3>
+<ul>
+  <% @payment.invoices.each do |each| -%>
+    <li><%= link_to each.paid_on.to_s(:basic), admin_invoice_path(each) %></li>
+  <% end -%>
+</ul>
+
+<% unless @payment.paid_off? -%>
+  <div class="options">
+    <%= link_to 'create a new invoice for this payment', admin_new_invoice_path(:payment_id => @payment) %>
+  </div>
+<% end -%>

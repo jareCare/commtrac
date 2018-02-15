@@ -1,0 +1,16 @@
+<h2>New Password</h2>
+
+<%= error_messages_for :user -%>
+<% form_for :user, :url => admin_passwords_path(:user_id => @user) do |form| %>
+  <p>
+    <label for="user_password">Password</label>
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <label for="user_password_confirmation">Password Again</label>
+    <%= form.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', admin_user_path(@user) %>
+  </p>
+<% end %>

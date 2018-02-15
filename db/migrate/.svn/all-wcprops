@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate
+END
+010_create_reasons.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/010_create_reasons.rb
+END
+015_update_floating_point_precision.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/015_update_floating_point_precision.rb
+END
+013_add_search_indexes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/013_add_search_indexes.rb
+END
+022_replace_pending_and_accepted_with_status_in_payments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/022_replace_pending_and_accepted_with_status_in_payments.rb
+END
+002_create_companies.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/002_create_companies.rb
+END
+020_add_false_default_to_broker_in_vendors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/020_add_false_default_to_broker_in_vendors.rb
+END
+004_create_vendors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/004_create_vendors.rb
+END
+005_create_accounts.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/005_create_accounts.rb
+END
+006_create_invoices.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/006_create_invoices.rb
+END
+016_add_size_to_pictures.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/016_add_size_to_pictures.rb
+END
+008_create_trades.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/008_create_trades.rb
+END
+024_remove_balance_and_total_columns_from_companies.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/024_remove_balance_and_total_columns_from_companies.rb
+END
+001_add_sessions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/001_add_sessions.rb
+END
+021_add_processed_on_to_payments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/021_add_processed_on_to_payments.rb
+END
+018_add_token_to_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/018_add_token_to_users.rb
+END
+023_rename_vendors_to_organizations.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/023_rename_vendors_to_organizations.rb
+END
+003_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/003_create_users.rb
+END
+007_create_pictures.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/007_create_pictures.rb
+END
+019_add_totals_to_companies.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/019_add_totals_to_companies.rb
+END
+012_add_foreign_key_indexes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/012_add_foreign_key_indexes.rb
+END
+014_remove_reasons.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/014_remove_reasons.rb
+END
+009_create_payments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/009_create_payments.rb
+END
+011_add_credit_accrued_and_commission_paid_to_trades.rb
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/011_add_credit_accrued_and_commission_paid_to_trades.rb
+END
+017_remove_index_from_pictures.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/db/migrate/017_remove_index_from_pictures.rb
+END

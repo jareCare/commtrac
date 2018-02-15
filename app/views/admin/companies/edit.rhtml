@@ -1,0 +1,49 @@
+<h2>Edit Company</h2>
+
+<%= error_messages_for :company -%>
+<% form_for :company, :url => admin_company_path(@company),
+                      :html => { :method => :put } do |form| %>
+  <p>
+    <label for="company_name">Name</label>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <label for="company_soft_commission_rate">CSA Commission Rate (cents / share)</label>
+    <%= form.text_field :soft_commission_rate %>
+  </p>
+  <p>
+    <label for="company_best_commission_rate">Non-CSA Commission Rate (cents / share)</label>
+    <%= form.text_field :best_commission_rate %>
+  </p>
+  <p>
+    <label for="company_credit_rate">Credit Rate (cents / share)</label>
+    <%= form.text_field :credit_rate %>
+  </p>
+  <p>
+    <label for="company_street">Street (optional)</label>
+    <%= form.text_field :street %>
+  </p>
+  <p>
+    <label for="company_city">City (optional)</label>
+    <%= form.text_field :city %>
+  </p>
+  <p>
+    <label for="company_state">State (optional)</label>
+    <%= form.text_field :state %>
+  </p>
+  <p>
+    <label for="company_zipcode">Zipcode (optional)</label>
+    <%= form.text_field :zipcode %>
+  </p>
+  <p>
+    <label for="company_phone_number">Phone Number (optional)</label>
+    <%= form.text_field :phone_number %>
+  </p>
+  <p>
+    <label for="company_web_site">Web Site (optional)</label>
+    <%= form.text_field :web_site %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', admin_company_path(@company) %>
+  </p>
+<% end %>

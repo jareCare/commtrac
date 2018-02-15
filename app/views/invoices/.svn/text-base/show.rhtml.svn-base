@@ -1,0 +1,32 @@
+<h2><%= h @invoice.payment.account.organization.name %> - <%= @invoice.paid_on.to_s :basic %></h2>
+
+<dl>
+  <dt>Invoice Number</dt>
+  <dd><%= h @invoice.number %></dd>
+  <dt>Amount</dt>
+  <dd><%= number_to_currency @invoice.amount %></dd>
+  <dt>Service Date</dt>
+  <dd><%= @invoice.start_date.to_s :basic %> - <%= @invoice.end_date.to_s :basic %></dd>
+  <dt>Check Number</dt>
+  <dd><%= h @invoice.check_number %></dd>
+  <dt>Paid On</dt>
+  <dd><%= @invoice.paid_on.to_s :basic %></dd>
+  <dt><%= @invoice.payment.account.organization.organization_type -%></dt>
+  <dd><%= link_to h(@invoice.payment.account.organization.name), account_path(@invoice.payment.account.company, @invoice.payment.account) %></dd>
+  <dt>Notes</dt>
+  <dd>
+    <% if @invoice.notes.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @invoice.notes %>
+    <% end -%>
+  </dd>
+  <dt>Image</dt>
+  <dd>
+    <% if @invoice.picture.nil? -%>
+      &mdash;
+    <% else -%>
+      <%= link_to 'View', invoice_picture_path(@company, @invoice), :target => '_blank' %>
+    <% end -%>
+  </dd>
+</dl>

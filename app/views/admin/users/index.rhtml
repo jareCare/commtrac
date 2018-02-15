@@ -1,0 +1,19 @@
+<h2>Users</h2>
+
+<% group_by_company(@users).each do |company, company_users| -%>
+  <h3><%= h company.name %></h3>  
+  <ul>
+    <% company_users.each do |each| -%>
+      <li>
+        <%= link_to h(each.name), admin_user_path(each) %>
+	<% if each.admin? -%> 
+	  (admin)
+	<% end -%>
+      </li>
+    <% end -%>
+  </ul>
+<% end -%>
+
+<div class="options">
+  <%= link_to 'add a new user', admin_new_user_path %>
+</div>

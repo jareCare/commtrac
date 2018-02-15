@@ -1,0 +1,27 @@
+<h2>Brokers</h2>
+
+<% if @organizations.any? {|each| each.broker?} -%>
+  <ul>
+    <% @organizations.select {|each| each.broker?}.each do |each| -%>
+      <li><%= link_to h(each.name), admin_organization_path(each) %></li>
+    <% end -%>
+  </ul>
+<% else -%>
+  <p>&mdash;</p>
+<% end -%>
+
+<h2>Vendors</h2>
+
+<% if @organizations.any? {|each| each.vendor?} -%>
+  <ul>
+    <% @organizations.select {|each| each.vendor?}.each do |each| -%>
+      <li><%= link_to h(each.name), admin_organization_path(each) %></li>
+    <% end -%>
+  </ul>
+<% else -%>
+  <p>&mdash;</p>
+<% end -%>
+
+<div class="options">
+  <%= link_to 'add a new broker or organization', admin_new_organization_path %>
+</div>

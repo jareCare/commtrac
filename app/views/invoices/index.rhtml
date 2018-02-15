@@ -1,0 +1,130 @@
+<% content_for :sidebar do %>
+  <h2>Payment Summary as of <%= Time.now.to_s :basic %></h2>
+  <table cellspacing="0">
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>MTD</th>
+        <th>YTD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>CSA Payments Processed</td>
+        <td class="number">
+          <%= number_to_currency @company.processed_payments_mtd_up_to(Time.now) %>
+        </td>
+        <td class="number">
+          <%= number_to_currency @company.processed_payments_ytd_up_to(Time.now) %>
+        </td>
+      </tr>
+      <tr>
+        <td>CSA Payments Pending/Accepted</td>
+        <td class="number">
+          <%= number_to_currency @company.pending_and_accepted_payments_mtd_up_to(Time.now) %>
+        </td>
+        <td class="number">
+          <%= number_to_currency @company.pending_and_accepted_payments_ytd_up_to(Time.now) %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
+
+<h2>Search Payment History</h2>
+<% form_tag invoices_path(@company), :method => :get do %>
+  <p>
+    <label for="organization_id">Vendor / Broker</label>
+    <%= select_tag :organization_id, 
+          options_for_select(all_organizations + available_organizations, 
+                             params[:organization_id] =~ /\d+/ ? params[:organization_id].to_i : params[:organization_id]) %>
+  </p>
+  <p>
+    <label>Paid Between</label>
+    <%= select_month @start_date || Time.now.beginning_of_month, :prefix => 'start_date' %>
+    <%= select_day @start_date || Time.now.beginning_of_month, :prefix => 'start_date' %>
+    <%= select_year @start_date || Time.now.beginning_of_month, :prefix => 'start_date', :start_year => 2007, :end_year => Time.now.year %>
+    <%= image_tag 'calendar.gif', :id => 'start_date_trigger' %>
+    <script type="text/javascript">
+       setupCalendar('start_date[month]', 
+                     'start_date[day]',
+		     'start_date[year]',
+		     'start_date_trigger');
+    </script>
+  </p>
+  <p>
+    <%= select_month @end_date || Time.now.end_of_month, :prefix => 'end_date' %>
+    <%= select_day @end_date || Time.now.end_of_month, :prefix => 'end_date' %>
+    <%= select_year @end_date || Time.now.end_of_month, :prefix => 'end_date', :start_year => 2007, :end_year => Time.now.year %>
+    <%= image_tag 'calendar.gif', :id => 'end_date_trigger' %>
+    <script type="text/javascript">
+       setupCalendar('end_date[month]', 
+                     'end_date[day]',
+		     'end_date[year]',
+		     'end_date_trigger');
+    </script>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %>
+  </p>
+<% end %>
+
+<% unless @organization.nil? -%>
+  <p><%= @organization.organization_type %>: <%= h @organization.name %></p>
+<% end -%>
+
+<% if ! @vendors.nil? || 
+      ! @brokers.nil? -%>
+    <% unless @vendors.nil? -%>
+      <p>Vendor: <%= h @vendors %></p>
+    <% end -%>
+    <% unless @brokers.nil? -%>
+      <p>Broker: <%= h @brokers %></p>
+    <% end -%>
+<% end -%>
+
+<% unless @start_date.nil? ||
+          @end_date.nil? -%>
+  <p>Paid between: <%= @start_date.to_s :basic %> - <%= @end_date.to_s :basic %></p>
+<% end -%>
+
+<% unless @invoices.nil? -%>
+  <% if @invoices.empty? -%>
+    <p>There were no invoices found.</p>
+  <% else -%>
+    <table cellspacing="0">
+      <thead>
+        <tr>
+          <th>Vendor / Broker</th>
+	  <th>Paid On</th>
+	  <th>Service Date</th>
+	  <th>Amount</th>
+	</tr>
+      </thead>
+      <tbody>
+        <% group_by_organization(@invoices).each do |organization, invoices| -%>
+	  <tr>
+            <td><%= h organization.name %></td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	    <td>&nbsp;</td>
+	  </tr>
+          <% sort_by_paid_on(invoices).each do |each| -%>
+            <tr>
+	      <td>&nbsp;</td>
+	      <td><%= link_to each.paid_on.to_s(:basic), invoice_path(@company, each) %></td>
+	      <td><%= "#{each.start_date.to_s :basic} - #{each.end_date.to_s :basic}" %></td>
+  	      <td class="number"><%= number_to_currency each.amount %></td>
+  	    </tr>
+          <% end -%>
+        <% end -%>
+        <tr class="totals-row">
+	  <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+	  <td>&nbsp;</td>
+	  <td class="number"><%= number_to_currency total_amount(@invoices) %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end -%>
+<% end -%>

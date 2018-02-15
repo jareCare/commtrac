@@ -1,0 +1,28 @@
+company_one:
+  id: 1
+  name: Company 1
+  street: 100 Main St.
+  city: Anytown
+  state: MA
+  zipcode: '11111'
+  phone_number: (111) 555-1212
+  web_site: http://www.company-one.com
+  best_commission_rate: 2.50
+  soft_commission_rate: 3.00
+  credit_rate: 1.50
+  created_on: <%= Time.now.to_s :db %>
+
+company_two:
+  id: 2
+  name: Company 2
+  street: 200 Main St.
+  city: Anytown
+  state: MA
+  zipcode: '22222'
+  phone_number: (222) 555-1212
+  web_site: http://www.company-two.com
+  best_commission_rate: 2.50
+  soft_commission_rate: 3.00
+  credit_rate: 2.50
+  created_on: <%= Time.now.to_s :db %>
+

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates
+END
+view.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/view.rhtml
+END
+helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 149
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/helper.rb
+END
+functional_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/functional_test.rb
+END
+controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/railties/lib/rails_generator/generators/components/controller/templates/controller.rb
+END

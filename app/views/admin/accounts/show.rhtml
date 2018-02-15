@@ -1,0 +1,58 @@
+<h2><% @account.organization.organization_type %> Account <%= h @account.number %></h2>
+
+<dl>
+  <dt>Company</dt>
+  <dd><%= link_to h(@account.company.name), admin_company_path(@account.company) %></dd>
+  <dt><%= @account.organization.organization_type %></dt>
+  <dd><%= link_to h(@account.organization.name), admin_organization_path(@account.organization) %></dd>
+  <dt>Account Name or Number</dt>
+  <dd><%= h @account.number %></dd>
+</dl>
+
+<div class="options">
+  <%= link_to 'edit', admin_edit_account_path(@account) %>
+  <%= link_to 'delete', admin_account_path(@account),
+                        :method => :delete,
+                        :confirm => 'Are you sure you want to delete this account?' %>
+</div>
+
+<h3>Payments</h3>
+
+<h4>Pending</h4>
+<% if @account.payments.any? {|each| each.pending?} -%>
+  <ul>
+    <% sort_by_created_on(@account.payments.select {|each| each.pending?}).each do |each| -%>
+      <li>
+        <%= link_to "#{number_to_currency each.amount} - #{each.created_on.to_s :basic}", admin_edit_payment_path(each) %>
+      </li>
+    <% end -%>
+  </ul>
+<% else -%>
+  &mdash;
+<% end -%>
+
+<h4>Accepted</h4>
+<% if @account.payments.any? {|each| each.accepted?} -%>
+  <ul>
+    <% sort_by_updated_on(@account.payments.select {|each| each.accepted?}).each do |each| -%>
+      <li>
+        <%= link_to "#{number_to_currency each.amount} - #{each.updated_on.to_s :basic}", admin_payment_path(each) %>
+      </li>
+    <% end -%>
+  </ul>
+<% else -%>
+  &mdash;
+<% end -%>
+
+<h4>Processed</h4>
+<% if @account.payments.any? {|each| each.processed?} -%>
+  <ul>
+    <% sort_by_processed_on(@account.payments.select {|each| each.processed?}).each do |each| -%>
+      <li>
+        <%= link_to "#{number_to_currency each.amount} - #{each.processed_on.to_s :basic}", admin_payment_path(each) %>
+      </li>
+    <% end -%>
+  </ul>
+<% else -%>
+  &mdash;
+<% end -%>

@@ -1,0 +1,2 @@
+module Admin::TradesHelper
+end

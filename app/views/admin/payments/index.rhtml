@@ -1,0 +1,39 @@
+<h2>Payments</h2>
+
+<h3>Pending</h3>
+<% if @payments.any? {|each| each.pending?} -%>
+  <% group_by_company(@payments.select {|each| each.pending?}).each do |company, company_payments| -%>
+    <h3><%= link_to h(company.name), admin_company_path(company) %></h3>
+    <ul>
+      <% sort_by_created_on(company_payments).each do |each| -%>
+        <li>
+          <%= link_to each.account.organization.name, admin_account_path(each.account) %><br />
+          <%= link_to "#{number_to_currency each.amount} - #{each.created_on.to_s :basic}", admin_payment_path(each) %>
+	</li>
+      <% end -%>
+    </ul>
+  <% end -%>
+<% else -%>
+  <p>&mdash;</p>
+<% end -%>
+
+<h3>Accepted</h3>
+<% if @payments.any? {|each| each.accepted?} -%>
+  <% group_by_company(@payments.select {|each| each.accepted?}).each do |company, company_payments| -%>
+    <h3><%= link_to h(company.name), admin_company_path(company) %></h3>
+    <ul>
+      <% sort_by_updated_on(company_payments).each do |each| -%>
+        <li>
+          <%= link_to each.account.organization.name, admin_account_path(each.account) %><br />
+          <%= link_to "#{number_to_currency each.amount} - #{each.updated_on.to_s :basic}", admin_payment_path(each) %>
+	</li>
+      <% end -%>
+    </ul>
+  <% end -%>
+<% else -%>
+  <p>&mdash;</p>
+<% end -%>
+
+<h3>Processed</h3>
+<p><%= link_to 'invoice history', admin_invoices_path %></p>
+

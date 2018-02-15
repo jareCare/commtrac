@@ -1,0 +1,55 @@
+company_one_vendor_one_this_month_invoice:
+  id: 1
+  filename: Company 1 Vendor 1 This Month.pdf
+  content_type: application/pdf
+  created_on: <%= Time.now.to_s :db %>
+  subject_id: 1
+  subject_type: Invoice
+
+company_one_vendor_one_last_month_invoice:
+  id: 2
+  filename: Company 1 Vendor 1 Last Month.jpg
+  content_type: image/jpeg
+  created_on: <%= Time.now.to_s :db %>
+  subject_id: 2
+  subject_type: Invoice
+
+company_one_vendor_two_last_month_invoice:
+  id: 3
+  filename: Company 1 Vendor 2 Last Month.jpg
+  content_type: image/jpeg
+  created_on: <%= Time.now.to_s :db %>
+  subject_id: 3
+  subject_type: Invoice
+
+company_one_vendor_three_this_month_invoice:
+  id: 4
+  filename: Company 1 Vendor 3 This Month.pdf
+  content_type: application/pdf
+  created_on: <%= Time.now.to_s :db %>
+  subject_id: 4
+  subject_type: Invoice
+
+company_two_vendor_one_this_month:
+  id: 5
+  filename: Company 2 Vendor 1 This Month.pdf
+  content_type: application/pdf
+  created_on: <%= Time.now.to_s :db %>
+  subject_id: 5
+  subject_type: Invoice
+
+company_two_vendor_two_two_months_ago:
+  id: 6
+  filename: Company 2 Vendor 2 2 Months Ago.jpg
+  content_type: image/jpeg
+  created_on: <%= Time.now.to_s :db %>
+  subject_id: 6
+  subject_type: Invoice
+
+user_two:
+  id: 7
+  filename: User Two.jpg
+  content_type: image/jpeg
+  created_on: <%= Time.now.to_s :db %>
+  subject_id: 2
+  subject_type: User

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color
+END
+palette.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color/palette.rb
+END
+yiq.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color/yiq.rb
+END
+cmyk.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color/cmyk.rb
+END
+hsl.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color/hsl.rb
+END
+css.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color/css.rb
+END
+rgb-colors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color/rgb-colors.rb
+END
+grayscale.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color/grayscale.rb
+END
+rgb.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/plugins/color-tools-1.3.0/lib/color/rgb.rb
+END

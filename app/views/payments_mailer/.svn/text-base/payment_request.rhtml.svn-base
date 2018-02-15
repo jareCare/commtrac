@@ -1,0 +1,7 @@
+<%= @payment.user.name %> has requested a payment on the <%= @payment.account.company.name %> / <%= @payment.account.organization.name %> account in the amount of <%= number_to_currency @payment.amount %>.
+
+Reason:
+
+<%= @payment.request %>
+
+Go to <%= admin_edit_payment_url @payment %> to view/accept/reject the payment.

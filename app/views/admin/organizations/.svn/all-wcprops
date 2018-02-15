@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/app/views/admin/organizations
+END
+show.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/app/views/admin/organizations/show.rhtml
+END
+edit.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/app/views/admin/organizations/edit.rhtml
+END
+index.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/app/views/admin/organizations/index.rhtml
+END
+new.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/app/views/admin/organizations/new.rhtml
+END

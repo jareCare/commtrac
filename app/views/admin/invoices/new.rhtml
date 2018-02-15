@@ -1,0 +1,61 @@
+<h2>New Invoice for <%= h @payment.account.company.name %> / <%= h @payment.account.organization.name %></h2>
+
+<p>Amount due: <%= number_to_currency @payment.amount_due %></p>
+
+<p>Credit Balance for <%= h @payment.account.company.name %>: <%= number_to_currency @payment.account.company.credit_balance %></p>
+
+<%= error_messages_for :invoice -%>
+<% form_for :invoice, :url => admin_invoices_path(:payment_id => @payment) do |form| %>
+  <p>
+    <label for="invoice_number">Invoice Number</label>
+    <%= form.text_field :number %>
+  </p>
+  <p>
+    <label for="invoice_amount">Amount</label>
+    $ <%= form.text_field :amount %>
+  </p>
+  <p>
+    <label for="invoice_start_date">Service Date</label>
+    <%= form.date_select :start_date, :order => [:month, :day, :year], :start_year => 2007, :end_year => Time.now.year %>
+    <%= image_tag 'calendar.gif', :id => 'invoice_start_date_trigger' %>
+    <script type="text/javascript">
+       setupCalendar('invoice_start_date_2i', 
+                     'invoice_start_date_3i',
+		     'invoice_start_date_1i',
+		     'invoice_start_date_trigger');
+    </script>
+    <br />
+    to
+    <br />
+    <%= form.date_select :end_date, :order => [:month, :day, :year], :start_year => 2007, :end_year => Time.now.year %>
+    <%= image_tag 'calendar.gif', :id => 'invoice_end_date_trigger' %>
+    <script type="text/javascript">
+       setupCalendar('invoice_end_date_2i', 
+                     'invoice_end_date_3i',
+		     'invoice_end_date_1i',
+		     'invoice_end_date_trigger');
+    </script>
+  </p>
+  <p>
+    <label for="invoice_check_number">Check Number</label>
+    <%= form.text_field :check_number %>
+  </p>
+  <p>
+    <label for="invoice_paid_on">Paid On</label>
+    <%= form.date_select :paid_on, :order => [:month, :day, :year], :start_year => 2007, :end_year => Time.now.year %>
+    <%= image_tag 'calendar.gif', :id => 'invoice_paid_on_trigger' %>
+    <script type="text/javascript">
+       setupCalendar('invoice_paid_on_2i', 
+                     'invoice_paid_on_3i',
+		     'invoice_paid_on_1i',
+		     'invoice_paid_on_trigger');
+    </script>
+  </p>
+  <p>
+    <label for="invoice_notes">Notes (optional)</label>
+    <%= form.text_area :notes, :rows => 5 %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', admin_payment_path(@payment) %>
+  </p>
+<% end %>

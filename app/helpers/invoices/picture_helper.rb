@@ -1,0 +1,2 @@
+module Invoices::PictureHelper
+end

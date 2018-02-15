@@ -1,0 +1,29 @@
+<h2>Do you want to accept this payment?</h2>
+
+<p><%= number_to_currency @payment.amount %> for the <%= h @payment.account.company.name %> / <%= h @payment.account.organization.name %> account</p>
+
+<p>Credit Balance for <%= h @payment.account.company.name %>: <%= number_to_currency @payment.account.company.credit_balance %></p>
+
+<%= error_messages_for :payment -%>
+<% form_for :payment, :url => admin_payment_path(@payment),
+                      :html => { :method => :put } do |form| %>
+  <p>
+    <label for="decision_yes">Yes</label>
+    <%= radio_button_tag :decision, 'yes', true, :id => :decision_yes %>
+  </p>
+  <p>
+    <label for="decision_no">No</label>
+    <%= radio_button_tag :decision, 'no', false, :id => :decision_no %>
+  </p>
+  <p>
+    <label for="payment_request">Their Notes</label>
+    <%= form.text_area :request, :rows => 5, :disabled => :disabled %>
+  </p>
+  <p>
+    <label for="payment_response">Your Notes</label>
+    <%= form.text_area :response, :rows => 5 %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', admin_payment_path(@payment) %>
+  </p>
+<% end %>

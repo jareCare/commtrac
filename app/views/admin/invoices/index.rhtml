@@ -1,0 +1,13 @@
+<h2>Invoice History</h2>
+
+<% group_by_company(@invoices).each do |company, company_invoices| -%>
+  <h3><%= link_to h(company.name), admin_company_path(company) %></h3>
+    <ul>
+      <% sort_by_paid_on(company_invoices).each do |each| -%>
+        <li>
+	  <%= link_to each.paid_on.to_s(:basic), admin_invoice_path(each) %>
+	  <%= link_to h(each.payment.account.organization.name), admin_account_path(each.payment.account) %>
+	</li>
+      <% end -%>
+    </ul>
+<% end -%>

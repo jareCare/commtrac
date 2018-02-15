@@ -1,0 +1,43 @@
+<h2>New Trade</h2>
+
+<%= error_messages_for :trade %>
+<% form_for :trade, :url => admin_trades_path do |form| %>
+  <p>
+    <label for="trade_direction">Direction</label>
+    <%= form.select :direction, %w(Buy Sell) %>
+  </p>
+  <p>
+    <label for="trade_quantity">Quantity</label>
+    <%= form.text_field :quantity %>
+  </p>
+  <p>
+    <label for="trade_symbol">Symbol</label>
+    <%= form.text_field :symbol %>
+  </p>
+  <p>
+    <label for="trade_average_price">Average Price</label>
+    <%= form.text_field :average_price %>
+  </p>
+  <p>
+    <label for="trade_made_on">Made On</label>
+    <%= form.date_select :made_on, :order => [:month, :day, :year], :start_year => 2007, :end_year => Time.now.year %>
+    <%= image_tag 'calendar.gif', :id => 'made_on_trigger' %>
+    <script type="text/javascript">
+       setupCalendar('trade[made_on(2i)]', 
+                     'trade[made_on(3i)]',
+		     'trade[made_on(1i)]',
+		     'made_on_trigger');
+    </script>
+  </p>
+  <p>
+    <label for="trade_execution_type">Execution Type</label>
+    <%= form.select :execution_type, available_execution_types - [%w(All All)] %>
+  </p>
+  <p>
+    <label for="trade_company_id">Company</label>
+    <%= form.select :company_id, available_companies %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', admin_trades_path %>
+  </p>
+<% end %>

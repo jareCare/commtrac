@@ -1,0 +1,83 @@
+company_one_vendor_one_this_month:
+  id: 1
+  number: I-1
+  amount: 1.00
+  start_date: <%= Time.now.beginning_of_month.to_date.to_s :db %>
+  end_date: <%= Time.now.end_of_month.to_date.to_s :db %>
+  check_number: 001
+  paid_on: <%= 1.day.ago.to_date.to_s :db %>
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+  payment_id: 1
+
+company_one_vendor_one_last_month:
+  id: 2
+  number: I-2
+  amount: 2.00
+  start_date: <%= 1.month.ago.beginning_of_month.to_date.to_s :db %>
+  end_date: <%= 1.month.ago.end_of_month.to_date.to_s :db %>
+  check_number: 002
+  paid_on: <%= 2.weeks.ago.to_date.to_s :db %>
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+  payment_id: 1
+
+company_one_vendor_two_last_month:
+  id: 3
+  number: I-3
+  amount: 3.00
+  start_date: <%= 1.month.ago.beginning_of_month.to_date.to_s :db %>
+  end_date: <%= 1.month.ago.end_of_month.to_date.to_s :db %>
+  check_number: 003
+  paid_on: <%= 3.weeks.ago.to_date.to_s :db %>
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+  payment_id: 2
+
+company_one_vendor_three_this_month:
+  id: 4
+  number: I-4
+  amount: 4.00
+  start_date: <%= Time.now.beginning_of_month.to_date.to_s :db %>
+  end_date: <%= Time.now.end_of_month.to_date.to_s :db %>
+  check_number: 004
+  paid_on: <%= 1.week.ago.to_date.to_s :db %>
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+  payment_id: 3
+
+company_two_vendor_one_this_month:
+  id: 5
+  number: I-5
+  amount: 5.00
+  start_date: <%= Time.now.beginning_of_month.to_date.to_s :db %>
+  end_date: <%= Time.now.end_of_month.to_date.to_s :db %>
+  check_number: 005
+  paid_on: <%= 1.week.ago.to_date.to_s :db %>
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+  payment_id: 4
+
+company_two_vendor_two_two_months_ago:
+  id: 6
+  number: I-6
+  amount: 6.00
+  start_date: <%= 2.months.ago.beginning_of_month.to_date.to_s :db %>
+  end_date: <%= 2.months.ago.end_of_month.to_date.to_s :db %>
+  check_number: 006
+  paid_on: <%= 5.weeks.ago.to_date.to_s :db %>
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+  payment_id: 5
+
+company_two_broker_one_this_month:
+  id: 7
+  number: I-7
+  amount: 7.00
+  start_date: <%= Time.now.beginning_of_month.to_date.to_s :db %>
+  end_date: <%= Time.now.end_of_month.to_date.to_s :db %>
+  check_number: 007
+  paid_on: <%= Time.now.to_date.to_s :db %>
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+  payment_id: 6

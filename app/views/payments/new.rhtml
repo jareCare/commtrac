@@ -1,0 +1,34 @@
+<h2>Request Payment</h2>
+
+<p>Credit balance: <%= number_to_currency @company.credit_balance %></p>
+
+<%= error_messages_for :payment -%>
+<% form_for :payment, :url => payments_path do |form| %>
+  <p>
+    <label for="payment_account_id">Broker / Vendor</label>
+    <%= form.select :account_id, available_accounts %>
+  </p>
+  <p>
+    <label for="payment_amount">Amount</label>
+    $ <%= form.text_field :amount %>
+  </p>
+  <p>Research Services</p>
+  <% available_reasons.each do |each| -%>
+   <p>
+     <%= check_box_tag each %>
+     <label for="<%= each %>" class="inline"><%= each %></label>
+   </p>
+  <% end -%>
+   <p>
+     <%= check_box_tag :other %>
+     <label for="other" class="inline">other (please describe)</label><br /><br />
+     <%= text_area_tag :other_description, nil, :rows => 5, :cols => 40 %>
+   </p>
+  <p>
+    <label for="payment_request">Notes (optional)</label>
+    <%= form.text_area :request, :rows => 5 %>
+  </p>
+  <p>
+    <%= submit_tag 'Submit' %> / <%= link_to 'Cancel', payments_path(@company) %>
+  </p>
+<% end %>

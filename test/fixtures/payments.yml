@@ -1,0 +1,54 @@
+user_two_company_one_vendor_one_account:
+  id: 1
+  amount: 50.00
+  user_id: 2
+  account_id: 1
+  status: Pending
+  created_on: <%= Time.local(2007, 1, 1).to_s :db %>
+  updated_on: <%= Time.now.to_s :db %>
+
+user_two_company_one_vendor_two_account:
+  id: 2
+  amount: 50.00
+  user_id: 2
+  account_id: 2
+  status: Pending
+  created_on: <%= Time.now.to_s :db %>
+  updated_on: <%= Time.now.to_s :db %>
+
+user_two_company_one_vendor_three_account:
+  id: 3
+  amount: 50.00
+  user_id: 2
+  account_id: 3
+  status: Pending
+  created_on: <%= Time.now.to_s :db %>
+  updated_on: <%= Time.now.to_s :db %>
+
+user_two_company_two_vendor_one_account:
+  id: 4
+  amount: 15.00
+  user_id: 2
+  account_id: 4
+  status: Pending
+  created_on: <%= Time.now.to_s :db %>
+  updated_on: <%= Time.now.to_s :db %>
+
+user_two_company_two_vendor_two_account:
+  id: 5
+  amount: 15.00
+  user_id: 2
+  account_id: 5
+  status: Pending
+  created_on: <%= Time.now.to_s :db %>
+  updated_on: <%= Time.now.to_s :db %>
+
+user_two_company_two_broker_one_account:
+  id: 6
+  amount: 15.00
+  user_id: 2
+  account_id: 6
+  status: Pending
+  created_on: <%= Time.now.to_s :db %>
+  updated_on: <%= Time.now.to_s :db %>
+

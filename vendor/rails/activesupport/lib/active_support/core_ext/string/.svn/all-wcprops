@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/string
+END
+inflections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/string/inflections.rb
+END
+access.rb
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/string/access.rb
+END
+starts_ends_with.rb
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/string/starts_ends_with.rb
+END
+unicode.rb
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/string/unicode.rb
+END
+conversions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/string/conversions.rb
+END
+iterators.rb
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/vendor/rails/activesupport/lib/active_support/core_ext/string/iterators.rb
+END

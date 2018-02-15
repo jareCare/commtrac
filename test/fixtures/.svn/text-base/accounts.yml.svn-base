@@ -1,0 +1,41 @@
+company_one_vendor_one:
+  id: 1
+  number: A-1
+  created_on: <%= Time.now.to_s :db %>
+  company_id: 1
+  organization_id: 1
+  
+company_one_vendor_two:
+  id: 2
+  number: A-2
+  created_on: <%= Time.now.to_s :db %>
+  company_id: 1
+  organization_id: 2
+
+company_one_vendor_three:
+  id: 3
+  number: A-3
+  created_on: <%= Time.now.to_s :db %>
+  company_id: 1
+  organization_id: 3  
+
+company_two_vendor_one:
+  id: 4
+  number: A-4
+  created_on: <%= Time.now.to_s :db %>
+  company_id: 2
+  organization_id: 1
+
+company_two_vendor_two:
+  id: 5
+  number: A-5
+  created_on: <%= Time.now.to_s :db %>
+  company_id: 2
+  organization_id: 2
+
+company_two_broker_one:
+  id: 6
+  number: A-6
+  created_on: <%= Time.now.to_s :db %>
+  company_id: 2
+  organization_id: 4

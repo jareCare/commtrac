@@ -1,0 +1,15 @@
+nutmeg:
+  id: 1
+  name: Nutmeg Securities, Ltd.
+  credit_rate: 0
+  best_commission_rate: 0
+  soft_commission_rate: 0
+  created_on: <%= Time.now.to_s :db %>
+
+mellon:
+  id: 2
+  name: Mellon Bank
+  credit_rate: 3.5
+  best_commission_rate: 2
+  soft_commission_rate: 5
+  created_on: <%= Time.now.to_s :db %>

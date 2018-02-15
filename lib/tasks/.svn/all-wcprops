@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/lib/tasks
+END
+db_bootstrap_nutmeg.rake
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/lib/tasks/db_bootstrap_nutmeg.rake
+END
+db_load_trades_mellon.rake
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/nutmegcommtrac/!svn/ver/201/branches/williamscommtrac/lib/tasks/db_load_trades_mellon.rake
+END

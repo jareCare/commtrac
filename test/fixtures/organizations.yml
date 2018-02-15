@@ -1,0 +1,59 @@
+vendor_one:
+  id: 1
+  name: Vendor 1
+  organization_type: Vendor
+  street: 10 Green St.
+  city: Somewhere
+  state: MA
+  zipcode: '11111'
+  contact: Joe Smith
+  email: vendor@one.com
+  phone_number: (555) 555-5555
+  terms: The terms.
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+
+vendor_two:
+  id: 2
+  name: Vendor 2
+  organization_type: Vendor
+  street: 25 Blue St.
+  city: Big City
+  state: MA
+  zipcode: '22222'
+  contact: Jane Jones
+  email: vendor@two.com
+  phone_number: (888) 888-8888
+  terms: The terms.
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+
+vendor_three:
+  id: 3
+  name: Vendor 3
+  organization_type: Vendor
+  street: 30 Yellow St.
+  city: Small Town
+  state: MA
+  zipcode: '33333'
+  contact: Bob Jackson
+  email: vendor@three.com
+  phone_number: (777) 777-7777
+  terms: The terms.
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>
+
+broker_one:
+  id: 4
+  name: Broker 3
+  organization_type: Broker
+  street: 30 Some St.
+  city: Town
+  state: MA
+  zipcode: '44444'
+  contact: Joe Jones
+  email: broker@one.com
+  phone_number: (888) 888-8888
+  terms: The terms.
+  notes: The Notes.
+  created_on: <%= Time.now.to_s :db %>

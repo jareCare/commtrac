@@ -1,0 +1,107 @@
+<h2><%= h @company.name %></h2>
+
+<% content_for :sidebar do %>
+  <%= render :partial => 'companies/totals', :locals => {
+                                               :action => admin_company_path(@company),
+                                               :company => @company
+                                             } %>
+<% end %>
+
+<dl>
+  <dt>Current Balance</dt>
+  <dd><%= number_to_currency @company.credit_balance %></dd>
+  <dt>Credit Rate</dt>
+  <dd><%= @company.credit_rate %> cents / share</dd>
+  <dt>CSA Commission Rate</dt>
+  <dd><%= @company.soft_commission_rate %> cents / share</dd>
+  <dt>Non-CSA Commission Rate</dt>
+  <dd><%= @company.best_commission_rate %> cents / share</dd>
+  <dt>Address</dt>
+  <dd>
+    <% if @company.street.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @company.street %>
+    <% end -%>
+    <% if @company.city.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @company.city %>
+    <% end -%>
+    <% if @company.state.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @company.state %>
+    <% end -%>
+    <% if @company.zipcode.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @company.zipcode %>
+    <% end -%>
+  </dd>
+  <dt>Phone Number</dt>
+  <dd>
+    <% if @company.phone_number.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= h @company.phone_number %>
+    <% end -%>
+  </dd>
+  <dt>Web Site</dt>
+  <dd>
+    <% if @company.web_site.blank? -%>
+      &mdash;
+    <% else -%>
+      <%= link_to h(@company.web_site), h(@company.web_site), :target => '_blank' %>
+    <% end -%>
+  </dd>
+</dl>
+
+<div class="options">
+  <%= link_to 'edit', admin_edit_company_path(@company) %>
+  <%= link_to 'delete', admin_company_path(@company),
+                        :method => :delete,
+                        :confirm => 'Are you sure you want to delete this company?' %>
+</div>
+
+<h3>Users</h3>
+<% if @company.users.empty? -%>
+  <p>&mdash;</p>
+<% else -%>
+  <ul>
+    <% @company.users.each do |each| -%>
+      <li><%= link_to h(each.name), admin_user_path(each) %></li>
+    <% end -%>
+  </ul>
+<% end -%>
+
+<h3>Associations</h3>
+<% if @company.accounts.empty? -%>
+  <p>&mdash;</p>
+<% else -%>
+  <h4>Brokers</h4>
+  <% if @company.brokers.empty? -%>
+    <p>&mdash;</p>
+  <% else -%>
+    <ul>
+      <% @company.accounts.select {|each| each.organization.broker?}.each do |each| -%>
+        <li><%= link_to h(each.organization.name), admin_account_path(each) %></li>
+      <% end -%>
+    </ul>
+  <% end -%>
+
+  <h4>Vendors</h4>
+  <% if @company.vendors.empty? -%>
+    <p>&mdash;</p>
+  <% else -%>
+    <ul>
+      <% @company.accounts.select {|each| each.organization.vendor?}.each do |each| -%>
+        <li><%= link_to h(each.organization.name), admin_account_path(each) %></li>
+      <% end -%>
+    </ul>
+  <% end -%>
+<% end -%>
+
+<div class="options">
+  <%= link_to 'add a new association', admin_new_account_path(:company_id => @company) %>
+</div>

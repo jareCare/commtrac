@@ -1,0 +1,31 @@
+<h3>Pending</h3>
+<% if payments.any? {|each| each.pending?} -%>
+  <ul>
+    <% sort_by_created_on(payments.select {|each| each.pending?}).each do |each| -%>
+      <li>
+        <%= link_to each.account.organization.name, account_path(each.account.company, each.account) %><br />
+        <%= number_to_currency each.amount %> - <%= each.created_on.to_s :basic %> 
+        <%= link_to 'cancel', 
+                    payment_path(each.user.company, each),
+                    :confirm => 'Are you sure you want to cancel this payment?',
+                    :method => :delete %>
+      </li>
+    <% end -%>
+  </ul>
+<% else -%>
+  &mdash;
+<% end -%>
+
+<h3>Accepted</h3>
+<% if payments.any? {|each| each.accepted?} -%>
+  <ul>
+    <% sort_by_updated_on(payments.select {|each| each.accepted?}).each do |each| -%>
+      <li>
+        <%= link_to each.account.organization.name, account_path(each.account.company, each.account) %><br />
+        <%= number_to_currency each.amount %> - <%= each.updated_on.to_s :basic %>
+      </li>
+    <% end -%>
+  </ul>
+<% else -%>
+  &mdash;
+<% end -%>
